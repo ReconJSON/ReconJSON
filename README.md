@@ -1,5 +1,5 @@
 # Recon.json - A JSON-based Recon Standard
-Recon.json is a project dedicated to creating a flexible and consistent JSON format across popular recon tools. Recon.json's format (obviously) is a valid JSON structure. This structure is designed to hold information about Hosts. Hosts objects are described by the set of attributes and other types defined in the standard below. Additions can be requested via the protocol in the "Additions" section. 
+Recon.json is a project dedicated to creating a flexible and consistent JSON format across popular recon tools. Recon.json's format (obviously) is a valid JSON structure. This structure is designed to hold information about Hosts. Hosts objects are described by the set of attributes and other types defined in the standard below. Additions can be requested via the protocol in the "Contributing" section. 
 
 ## Structure
 The output of a tool that utilizes Recon.json format should hold the following structure:
@@ -18,9 +18,9 @@ The ```Host``` object has the following attributes defined:
 * ```ipv4``` - The IPv4 address to route to this ```Host```
 * ```ipv6``` - The IPv6 address to route to this ```Host```
 * ```domain``` - The [second-level-domain](https://en.wikipedia.org/wiki/Second-level_domain) for this ```Host```
-* ```company``` - The company which owns this assets 
-* ```dns``` - The ```DNS``` object(s) that describe(s) this host
-* ```ports``` - The ```Port``` object(s) that describe(s) this host
+* ```company``` - The company which owns this ```Host``` 
+* ```dns``` - The ```DNS``` object(s) that describe(s) this ```Host```
+* ```ports``` - The ```Port``` object(s) that describe(s) this ```Host```
 
 Example:
 ```
@@ -66,10 +66,10 @@ Example:
 
 ### Port
 The ```Port``` object has the following attributes defined:
-* ```80``` (key) - The integer between 0 - 65535 that describes which port is open
-* ```state```(value) - The openness state of the port. Options: ```closed```, ```open```, ```filtered```
-* ```protocol```(value) - The protocol thought to be communicating on this port
-* ```banner``` (value) - The banner grabbed from this service
+* ```80``` (key) - The integer between 0 - 65535 that describes which port is open on this ```Host```
+* ```state``` (value - key) - The openness state of the port. Options: ```closed```, ```open```, ```filtered```
+* ```protocol``` (value - key) - The protocol thought to be communicating on this port
+* ```banner``` (value - key) - The banner grabbed from this service
 * ```content``` (value - key) - On certain services (80, 443, 8080, 8443) the content attribute can contain directory listings associated with this service
     * ```path``` (value - value) - The URI to this content
     * ```code``` (value - value) - The HTTP Status Code returned when this content was requested
@@ -109,3 +109,5 @@ The ```Port``` object has the following attributes defined:
 	]
 }
 ```
+## Contributing
+If you note any issues with Recon.json or would like to request an attribute or object be added to the standard, please submit an issue per the templates in the [Templates](https://github.com/Rhynorater/reconjson/templates/) folder. Before submiting any issues please use Github's Issue Search feature to check if there is a similar issue already submitted. 
