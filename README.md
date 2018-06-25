@@ -1,8 +1,8 @@
-# Recon.json - A JSON-based Recon Standard
-Recon.json is a project dedicated to creating a flexible and consistent JSON format across popular recon tools. Recon.json's format (obviously) is a valid JSON structure. This structure is designed to hold information about Hosts. Hosts objects are described by the set of attributes and other types defined in the standard below. Additions can be requested via the protocol in the "Contributing" section. 
+# Recon.JSON - A JSON-based Recon Standard
+Recon.JSON is a project dedicated to creating a flexible and consistent JSON format across popular recon tools. Recon.JSON's format (obviously) is a valid JSON structure. This structure is designed to hold information about Hosts. Hosts objects are described by the set of attributes and other types defined in the standard below. Additions can be requested via the protocol in the "Contributing" section. 
 
 ## Structure
-The output of a tool that utilizes Recon.json format should hold the following structure:
+The output of a tool that utilizes Recon.JSON format should hold the following structure:
 ```
 {
   "Host":[
@@ -110,4 +110,4 @@ The ```Port``` object has the following attributes defined:
 }
 ```
 ## Contributing
-If you note any issues with Recon.json or would like to request an attribute or object be added to the standard, please submit an issue per the templates in the [docs](https://github.com/Rhynorater/reconjson/tree/master/docs) folder. Before submiting any issues please use Github's Issue Search feature to check if there is a similar issue already submitted. 
+If you note any issues with Recon.JSON or would like to request an attribute or object be added to the standard, please submit an issue per the templates in the [docs](https://github.com/Rhynorater/reconjson/tree/master/docs) folder. Before submiting any issues please use Github's Issue Search feature to check if there is a similar issue already submitted. 
