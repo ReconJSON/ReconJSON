@@ -1,4 +1,4 @@
-# Recon.JSON - A JSON-based Recon Standard
+# Recon.JSON - A JSON-based Recon Data Standard
 Recon.JSON is a project dedicated to creating a flexible and consistent JSON format across popular recon tools. Recon.JSON's format (obviously) is a valid JSON structure. This structure is designed to hold information about Hosts. Hosts objects are described by the set of attributes and other types defined in the standard below. Additions can be requested via the protocol in the "Contributing" section. 
 
 ## Structure
