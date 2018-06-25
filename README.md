@@ -28,7 +28,8 @@ Example:
 	"Host":[
 		{
 			"subdomain":"example.acme.com",
-			"ip":"192.168.0.1",
+			"ipv4":"192.168.0.1",
+			"ipv6":"fe80::1",
 			"domain":"acme.com",
 			"company":"Acme",
 			"dns":{...},
