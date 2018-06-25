@@ -110,4 +110,4 @@ The ```Port``` object has the following attributes defined:
 }
 ```
 ## Contributing
-If you note any issues with Recon.json or would like to request an attribute or object be added to the standard, please submit an issue per the templates in the [Templates](https://github.com/Rhynorater/reconjson/templates/) folder. Before submiting any issues please use Github's Issue Search feature to check if there is a similar issue already submitted. 
+If you note any issues with Recon.json or would like to request an attribute or object be added to the standard, please submit an issue per the templates in the [docs](https://github.com/Rhynorater/reconjson/tree/master/docs) folder. Before submiting any issues please use Github's Issue Search feature to check if there is a similar issue already submitted. 
