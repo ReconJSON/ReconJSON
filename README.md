@@ -33,7 +33,7 @@ Example:
 			"domain":"acme.com",
 			"company":"Acme",
 			"dns":{...},
-			"port":{...}
+			"ports":{...}
 		}
 	]
 }
@@ -86,7 +86,7 @@ The ```Port``` object has the following attributes defined:
 			"ip":"192.168.0.1",
 			"domain":"acme.com",
 			"company":"Acme",
-			"port":{
+			"ports":{
 				"22":{
 					"state":"open",
 					"protocol":"ssh",
