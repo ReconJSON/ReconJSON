@@ -2,15 +2,20 @@
 Recon.JSON is a project dedicated to creating a flexible and consistent JSON format across popular recon tools. Recon.JSON's format (obviously) is a valid JSON structure. This structure is designed to hold information about Hosts. Hosts objects are described by the set of attributes and other types defined in the standard below. Additions can be requested via the protocol in the "Contributing" section. 
 
 ## Structure
-The output of a tool that utilizes Recon.JSON format should hold the following structure:
+The structure of a ReconJSON file MUST be as follows:
 ```
-{
-  "Host":[
+[
+{"type":"Host"},
+{"type":"Host"},
+{"type":"Host"},
+{"type":"Host"}
+]
+```
+The first line of a ReconJSON file MUST be a left bracket ```[``` (ASCII 91) and the last line MUST be a right bracket ```]``` (ASCII 93). In between these backets MUST be one or more ```Host``` objects. These objects MUST be collapsed JSON objects stored on a single line. These lines MUST be seperated by a comma ```,``` (ASCII 44) and a single linefeed character ```\n``` (ASCII 10). The ```Host``` object on the last line MUST NOT have a trailing comma ```,``` (ASCII 44), but MUST have a trailing linefeed character ```\n``` (ASCII 10).
 
-    ]
-}
-```
-Each JSON object should be placed inside the ```Host``` definition to show that the following objects are Hosts. Each other object type will be used to describe the ```Host``` object. 
+This format is meant to be a JSON and JSONLines hybrid. The reasoning behind this decision is to provide a file that can easily be parsed by programming languages' JSON libraries while also producing a file that is grep-able and one which a simple ```wc -l``` command will immediately convey the correct number of hosts to the user (number of lines - 2). 
+
+Each ```Host``` object defined in this section MUST follow the standard defined in the ```Host``` section of this document. 
 
 ### Host
 The ```Host``` object has the following attributes defined:
