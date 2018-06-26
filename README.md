@@ -54,6 +54,7 @@ Pretty Printed:
 
 
 The ```DNS``` object has the following attributes defined:
+* ```type``` - The type of object. In this case, ```DNS```
 * ```A``` - The list of ipv4 addresses that are associated with this ```Host```'s FQDN
 * ```AAAA``` - The list of ipv6 addresses that are associated with this ```Host```'s FQDN
 * ```CNAME``` - The list of FQDNs associated with this ```Host```
@@ -63,11 +64,13 @@ Example:
 {
 	"Host":[
 		{
-			"subdomain":"example.acme.com",
+			"type":"Host",
+			"fqdn":"example.acme.com",
 			"ip":"192.168.0.1",
 			"domain":"acme.com",
 			"company":"Acme",
 			"dns":{
+				"type":"DNS",
 				"A":["192.168.0.1", "192.168.0.2"],
 				"AAAA":["fe80::1"],
 				"CNAME":["ex.acme.com"]
@@ -95,17 +98,20 @@ The ```Port``` object has the following attributes defined:
  {
 	"Host":[
 		{
-			"subdomain":"example.acme.com",
+			"type":"Host",
+			"fqdn":"example.acme.com",
 			"ip":"192.168.0.1",
 			"domain":"acme.com",
 			"company":"Acme",
 			"ports":{
 				"22":{
+					"type":"Port",
 					"state":"open",
 					"protocol":"ssh",
 					"banner":"SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.4"
 				},
 				"80":{
+					"type":"Port",
 					"state":"open",
 					"protocol":"http",
 					"screenshot":"/root/screenshots/screenshot.jpg",
