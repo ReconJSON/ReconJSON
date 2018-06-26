@@ -18,31 +18,36 @@ This format is pure JSON, with the ```Host``` objects collapsed into a single li
 Each ```Host``` object defined in this section MUST follow the standard defined in the ```Host``` section of this document. 
 
 ### Host
+The ```Host``` object SHALL be used to describe a specific profile of a computer. There MAY be multiple ```Host``` objects to a single device, or multiple devices to a single ```Host``` as is seen fit by the user. See Host.md file for futher usage for the ```Host``` object. 
+
 The ```Host``` object has the following attributes defined:
-* ```subdomain``` - The FQDN (Fully Qualified Domain Name) that resolves to this ```Host```
-* ```ipv4``` - The IPv4 address to route to this ```Host```
-* ```ipv6``` - The IPv6 address to route to this ```Host```
-* ```domain``` - The [second-level-domain](https://en.wikipedia.org/wiki/Second-level_domain) for this ```Host```
+* ```type``` - The type of object. In this case, ```Host```
+* ```fqdn``` - The FQDN (Fully Qualified Domain Name) that resolves to this ```Host```
+* ```ip``` - The IPv4 or IPv6 address to route to this ```Host```
+* ```domain``` - The [second-level domain](https://en.wikipedia.org/wiki/Second-level_domain) for this ```Host```
 * ```company``` - The company which owns this ```Host``` 
 * ```dns``` - The ```DNS``` object(s) that describe(s) this ```Host```
 * ```ports``` - The ```Port``` object(s) that describe(s) this ```Host```
 
 Example:
 ```
-{
-	"Host":[
-		{
-			"subdomain":"example.acme.com",
-			"ipv4":"192.168.0.1",
-			"ipv6":"fe80::1",
-			"domain":"acme.com",
-			"company":"Acme",
-			"dns":{...},
-			"ports":{...}
-		}
-	]
-}
-
+[
+{"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","dns":{...},"ports":{...}}
+]
+```
+Pretty Printed:
+```
+[
+	{
+		"type":"Host",
+		"fqdn":"example.acme.com",
+		"ip":"192.168.0.1",
+		"domain":"acme.com",
+		"company":"Acme",
+		"dns":{...},
+		"ports":{...}
+	}
+]
 ```
 ### DNS
 The ```DNS``` object has the following attributes defined:
