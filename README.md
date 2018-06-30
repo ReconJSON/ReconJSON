@@ -102,18 +102,27 @@ Pretty Printed:
 
 
 ### Port
+The ```PORT``` object SHALL be used to describe the status of the ports on a specific ```Host```. The ```Port``` object MUST be placed inside of one of the two ISO Model Layer 4 categories of the ```Host``` object. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. 
+
+
 The ```Port``` object has the following attributes defined:
-* ```80``` (key) - The integer between 0 - 65535 that describes which port is open on this ```Host```
-* ```state``` (value - key) - The openness state of the port. Options: ```closed```, ```open```, ```filtered```
-* ```protocol``` (value - key) - The protocol thought to be communicating on this port
-* ```banner``` (value - key) - The banner grabbed from this service
-* ```content``` (value - key) - On certain services (80, 443, 8080, 8443) the content attribute can contain directory listings associated with this service
-    * ```path``` (value - value) - The URI to this content
-    * ```code``` (value - value) - The HTTP Status Code returned when this content was requested
-    * ```content-type``` (value - value) - The HTTP Content Type returned when this content was requested
-    * ```length``` (value - value) - The length, in bytes, returned when this content was requested
+* ```port``` - MUST be the integer between 0 - 65535 that describes which port is open on this ```Host```
+* ```state``` - MUST be the openness state of the port. Options: ```closed```, ```open```, ```filtered```. Typically, ```closed``` ports SHOULD NOT be reported.
+* ```protocol``` - MUST be the ISO Model Layer 7 protocol thought to be communicating on this port
+* ```banner``` - MUST be the banner grabbed from the service behind this port
+* ```service``` - MUST be the ```Service``` object that describes the service behind this port
  
  Example:
+ ```
+ {
+	"Host":[
+		{"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","ports":{"tcp":[{"type":"Port","port":"22","state":"open","protocol":"ssh","banner":"SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.4"},{"type":"Port","port":"80","state":"open","protocol":"http","service":{"type":"Service","protocol":"http","content":["path":"/test","screenshot":"/root/screenshots/screenshot.jpg","code":"200","content-type":"text/html","length":"1024"]}}],"udp":[]}}
+	]
+}
+```
+
+
+ Pretty Printed:
  ```
  {
 	"Host":[
@@ -124,26 +133,33 @@ The ```Port``` object has the following attributes defined:
 			"domain":"acme.com",
 			"company":"Acme",
 			"ports":{
-				"22":{
-					"type":"Port",
-					"state":"open",
-					"protocol":"ssh",
-					"banner":"SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.4"
-				},
-				"80":{
-					"type":"Port",
-					"state":"open",
-					"protocol":"http",
-					"screenshot":"/root/screenshots/screenshot.jpg",
-					"content":[
-						{
-							"path":"/test",
-							"code":"200",
-							"content-type":"text/html",
-							"length":"1024"
-						} 
-					]
-				}
+				"tcp":[
+					{
+						"type":"Port",
+						"port":"22"
+						"state":"open",
+						"protocol":"ssh",
+						"banner":"SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.4"
+					},
+					{
+						"type":"Port",
+						"port":"80",
+						"state":"open",
+						"protocol":"http",
+						"service":{
+								"type":"Service",
+								"protocol":"http"
+								"content":[
+									"path":"/test",
+									"screenshot":"/root/screenshots/screenshot.jpg",
+									"code":"200",
+									"content-type":"text/html",
+									"length":"1024"
+								]
+							} 
+					}
+				],
+				"udp":[]
 			}
 		}
 	]
