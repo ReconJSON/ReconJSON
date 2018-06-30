@@ -75,9 +75,7 @@ Example:
 
 ```
 {
-	"Host":[
 		{"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","dns":{"type":"DNS","A":["192.168.0.1", "192.168.0.2"],"AAAA":["fe80::1"],"CNAME":["ex.acme.com"],"PTR":["ex.acme.com"],"MX":["example-acme-com.mail.protection.outlook.com"],"NS":["nameserver.acme.com"],TXT":["txtRecordString"]}}
-	]
 }
 
 ```
@@ -86,7 +84,6 @@ Pretty Printed:
 
 ```
 {
-	"Host":[
 		{
 			"type":"Host",
 			"fqdn":"example.acme.com",
@@ -104,7 +101,6 @@ Pretty Printed:
 				"TXT":["txtRecordString"]
 			},
 		}
-	]
 }
 ```
 
@@ -126,9 +122,7 @@ The ```Port``` object has the following attributes defined:
  Example:
  ```
  {
-	"Host":[
 		{"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","ports":{"tcp":[{"type":"Port","port":"22","state":"open","protocol":"ssh","banner":"SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.4"},{"type":"Port","port":"80","state":"open","protocol":"http","service":{"type":"Service","protocol":"http","content":["path":"/test","screenshot":"/root/screenshots/screenshot.jpg","code":"200","content-type":"text/html","length":"1024"]}}],"udp":[]}}
-	]
 }
 ```
 
@@ -136,7 +130,6 @@ The ```Port``` object has the following attributes defined:
  Pretty Printed:
  ```
  {
-	"Host":[
 		{
 			"type":"Host",
 			"fqdn":"example.acme.com",
@@ -173,7 +166,6 @@ The ```Port``` object has the following attributes defined:
 				"udp":[]
 			}
 		}
-	]
 }
 ```
 ## Contributing
