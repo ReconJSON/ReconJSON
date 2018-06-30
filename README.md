@@ -50,16 +50,32 @@ Pretty Printed:
 ]
 ```
 ### DNS
-
+The ```DNS``` object SHALL be used to describe the DNS configuration of a specific ```Host```. 
 
 
 The ```DNS``` object has the following attributes defined:
-* ```type``` - The type of object. In this case, ```DNS```
-* ```A``` - The list of ipv4 addresses that are associated with this ```Host```'s FQDN
-* ```AAAA``` - The list of ipv6 addresses that are associated with this ```Host```'s FQDN
-* ```CNAME``` - The list of FQDNs associated with this ```Host```
+* ```type```* - MUST be the type of object. In this case, ```DNS```.
+* ```A``` - MUST be the list of IPv4 addresses that resolve from an A record lookup of this ```Host```s FQDN 
+* ```AAAA``` - MUST be the list of IPv4 addresses that resolve from an AAAA record lookup of this ```Host```'s FQDN
+* ```CNAME``` - MUST be the list of FQDNs that resolve from a CNAME record lookup of this ```Host```'s FQDN
+* ```PTR``` - MUST be the list of FQDNs that resolve from a PTR record lookup of this ```Host```'s IP
+* ```MX``` - MUST be the list of FQDNs that resolve from an MX record lookup of this ```Hosts```'s FQDN
+* ```NS``` - MUST be the list of FQDNs that resolve from a NS record lookup of this ```Hosts```'s FQDN
+* ```TXT``` - MUST be the list of strings that resolve from a TXT record lookup of this ```Hosts```'s FQDN
 
 Example:
+
+```
+{
+	"Host":[
+		{"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","dns":{"type":"DNS","A":["192.168.0.1", "192.168.0.2"],"AAAA":["fe80::1"],"CNAME":["ex.acme.com"],"PTR":["ex.acme.com"],"MX":["example-acme-com.mail.protection.outlook.com"],"NS":["nameserver.acme.com"],TXT":["txtRecordString"]}}
+	]
+}
+
+```
+
+Pretty Printed:
+
 ```
 {
 	"Host":[
@@ -73,7 +89,11 @@ Example:
 				"type":"DNS",
 				"A":["192.168.0.1", "192.168.0.2"],
 				"AAAA":["fe80::1"],
-				"CNAME":["ex.acme.com"]
+				"CNAME":["ex.acme.com"],
+				"PTR":["ex.acme.com"],
+				"MX":["example-acme-com.mail.protection.outlook.com"],
+				"NS":["nameserver.acme.com"],
+				"TXT":["txtRecordString"]
 			},
 		}
 	]
