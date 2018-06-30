@@ -2,7 +2,8 @@
 Recon.JSON is a project dedicated to creating a flexible and consistent JSON format across popular recon tools. Recon.JSON's format (obviously) is a valid JSON structure. This structure is designed to hold information about Hosts. Hosts objects are described by the set of attributes and other types defined in the standard below. Additions can be requested via the protocol in the "Contributing" section. 
 
 ## Structure
-The structure of a ReconJSON file MUST be as follows:
+A file the conforms to the ReconJSON standard MUST have the ```.json``` extension. Any name for the file is permitted. 
+The internal structure of a ReconJSON file MUST be as follows:
 ```
 [
 {"type":"Host"},
@@ -18,21 +19,23 @@ This format is pure JSON, with the ```Host``` objects collapsed into a single li
 Each ```Host``` object defined in this section MUST follow the standard defined in the ```Host``` section of this document. 
 
 ### Host
-The ```Host``` object SHALL be used to describe a specific profile of a computer. There MAY be multiple ```Host``` objects to a single device, or multiple devices to a single ```Host``` as is seen fit by the user. See Host.md file for futher usage for the ```Host``` object. 
+The ```Host``` object SHALL be used to describe a specific profile of a computer. There MAY be multiple ```Host``` objects to a single device, or multiple devices to a single ```Host``` as is seen fit by the user. See Host.md file for futher usage for the ```Host``` object. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below.
 
 The ```Host``` object has the following attributes defined:
-* ```type``` - The type of object. In this case, ```Host```
-* ```fqdn``` - The FQDN (Fully Qualified Domain Name) that resolves to this ```Host```
-* ```ip``` - The IPv4 or IPv6 address to route to this ```Host```
-* ```domain``` - The [second-level domain](https://en.wikipedia.org/wiki/Second-level_domain) for this ```Host```
-* ```company``` - The company which owns this ```Host``` 
-* ```dns``` - The ```DNS``` object(s) that describe(s) this ```Host```
-* ```ports``` - The ```Port``` object(s) that describe(s) this ```Host```
+* ```type```* - MUST be the type of object. In this case, ```Host```
+* ```fqdn``` - MUST be the FQDN (Fully Qualified Domain Name) that resolves to this ```Host```
+* ```ip```* - MUST be the IPv4 or IPv6 address to route to this ```Host```
+* ```domain``` - MUST be the [second-level domain](https://en.wikipedia.org/wiki/Second-level_domain) for this ```Host```
+* ```company``` - MUST be the company which owns this ```Host``` 
+* ```dns``` - MUST be the ```DNS``` object(s) that describe(s) this ```Host```
+* ```ports``` - MUST be the ```Port``` object(s) that describe(s) this ```Host```. The ```Port``` object(s) MUST be sorted by ISO Model Layer 4 protocol into either the ```tcp``` or the ```udp``` categories. If either of the ```tcp``` or ```udp``` categories are empty, they MUST still be included. However, if both ```tcp``` and ```udp```  are empty, the ```ports``` attribute MUST be excluded.
+
+\* Required attributes
 
 Example:
 ```
 [
-{"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","dns":{...},"ports":{...}}
+{"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","dns":{...},"ports":{"tcp":[],"udp":[]}}
 ]
 ```
 Pretty Printed:
@@ -45,12 +48,15 @@ Pretty Printed:
 		"domain":"acme.com",
 		"company":"Acme",
 		"dns":{...},
-		"ports":{...}
+		"ports":{
+			"tcp":[...],
+			"udp":[...]
+		}
 	}
 ]
 ```
 ### DNS
-The ```DNS``` object SHALL be used to describe the DNS configuration of a specific ```Host```. 
+The ```DNS``` object SHALL be used to describe the DNS configuration of a specific ```Host```. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below.
 
 
 The ```DNS``` object has the following attributes defined:
@@ -62,6 +68,8 @@ The ```DNS``` object has the following attributes defined:
 * ```MX``` - MUST be the list of FQDNs that resolve from an MX record lookup of this ```Hosts```'s FQDN
 * ```NS``` - MUST be the list of FQDNs that resolve from a NS record lookup of this ```Hosts```'s FQDN
 * ```TXT``` - MUST be the list of strings that resolve from a TXT record lookup of this ```Hosts```'s FQDN
+
+\* Required attributes
 
 Example:
 
@@ -106,12 +114,15 @@ The ```PORT``` object SHALL be used to describe the status of the ports on a spe
 
 
 The ```Port``` object has the following attributes defined:
-* ```port``` - MUST be the integer between 0 - 65535 that describes which port is open on this ```Host```
-* ```state``` - MUST be the openness state of the port. Options: ```closed```, ```open```, ```filtered```. Typically, ```closed``` ports SHOULD NOT be reported.
+* ```type```* - MUST be the type of object. In this case, ```Port```.
+* ```port```* - MUST be the integer between 0 - 65535 that describes which port is open on this ```Host```
+* ```state```* - MUST be the openness state of the port. Options: ```closed```, ```open```, ```filtered```. Typically, ```closed``` ports SHOULD NOT be reported.
 * ```protocol``` - MUST be the ISO Model Layer 7 protocol thought to be communicating on this port
 * ```banner``` - MUST be the banner grabbed from the service behind this port
 * ```service``` - MUST be the ```Service``` object that describes the service behind this port
- 
+
+\* Required attributes
+
  Example:
  ```
  {
