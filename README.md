@@ -113,7 +113,6 @@ The ```Port``` object has the following attributes defined:
 * ```type```* - MUST be the type of object. In this case, ```Port```.
 * ```port```* - MUST be the integer between 0 - 65535 that describes which port is open on this ```Host```
 * ```state```* - MUST be the openness state of the port. Options: ```closed```, ```open```, ```filtered```. Typically, ```closed``` ports SHOULD NOT be reported.
-* ```protocol``` - MUST be the ISO Model Layer 7 protocol thought to be communicating on this port
 * ```services``` - MUST be a list of ```Service``` object(s) that describes the service(s) behind this port
 
 \* Required attributes
