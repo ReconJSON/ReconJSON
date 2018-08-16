@@ -5,7 +5,7 @@ The ```DNS``` object SHALL be used to describe the DNS configuration of a specif
 The ```DNS``` object has the following attributes defined:
 * ```type```* - MUST be the type of object. In this case, ```DNS```.
 * ```A``` - MUST be the list of IPv4 addresses that resolve from an A record lookup of this ```Host```s FQDN 
-* ```AAAA``` - MUST be the list of IPv4 addresses that resolve from an AAAA record lookup of this ```Host```'s FQDN
+* ```AAAA``` - MUST be the list of IPv6 addresses that resolve from an AAAA record lookup of this ```Host```'s FQDN
 * ```CNAME``` - MUST be the list of FQDNs that resolve from a CNAME record lookup of this ```Host```'s FQDN
 * ```PTR``` - MUST be the list of FQDNs that resolve from a PTR record lookup of this ```Host```'s IP
 * ```MX``` - MUST be the list of FQDNs that resolve from an MX record lookup of this ```Hosts```'s FQDN
