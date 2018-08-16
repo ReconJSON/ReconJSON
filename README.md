@@ -119,9 +119,7 @@ The ```Port``` object has the following attributes defined:
 
 Example:
 ```
-{
-		{"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","ports":{"tcp":[{"type":"Port","port":"22","state":"open","protocol":"ssh","banner":"SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.4"},{"type":"Port","port":"80","state":"open","protocol":"http","service":{"type":"Service","protocol":"http","content":["path":"/test","screenshot":"/root/screenshots/screenshot.jpg","code":"200","content-type":"text/html","length":"1024"]}}],"udp":[]}}
-}
+{{"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","ports":{"tcp":[{"type":"Port","port":"22","state":"open"},{"type":"Port","port":"80","state":"open","services":[...]}],"udp":[]}}}
 ```
 
 
@@ -139,14 +137,12 @@ Pretty Printed:
 					{
 						"type":"Port",
 						"port":"22"
-						"state":"open",
-						"protocol":"ssh"
+						"state":"open"
 					},
 					{
 						"type":"Port",
 						"port":"80",
 						"state":"open",
-						"protocol":"http",
 						"services":[...]
 					}
 				],
