@@ -1,5 +1,5 @@
 ### ServiceDescriptor
-The ```ServiceDescriptor``` object SHALL be used to describe a specific attribute or configuration of the ```Service``` object. There MAY be several ```ServiceDescriptor``` objects to a single ```Service``` object. Since the ```ServiceDescriptor``` object is the object in which the specifics about programs are to be stored, it is impossible for the authors of this standard to construct a ```ServiceDescriptor``` object for each and every use case. As a result, community sourcing of this attribute is needed. There will be several ```ServiceDescriptor``` definitions in the ```ServiceDescriptors``` folder for basic use (HTTP(s) directories, HTTPS certs, and CSP Definitions) but more will be added as needed. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below or in another ServiceDescriptor spec doc.
+The ```ServiceDescriptor``` object SHALL be used to describe a specific attribute or configuration of the ```Service``` object. There MAY be several ```ServiceDescriptor``` objects to a single ```Service``` object. Since the ```ServiceDescriptor``` object is the object in which the specifics about programs are to be stored, it is impossible for the authors of this standard to construct a ```ServiceDescriptor``` object for each and every use case. As a result, community sourcing of this attribute is needed. There will be several ```ServiceDescriptor``` definitions in the ```ServiceDescriptors``` folder for basic use (HTTP(s) paths, HTTPS certs, and CSP Definitions) but more will be added as needed. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below or in another ServiceDescriptor spec doc.
 
 
 The ```ServiceDescriptor``` object has the following attributes defined:
@@ -21,10 +21,10 @@ Pretty Printed:
 	"protocol":"http",
 	"banner":"Apache 1.0",
 	"serviceDescriptors":{
-		"Directories":[
+		"Paths":[
 			{
 				"type":"ServiceDescriptor",
-				"name":"Directories",
+				"name":"Path",
 				"path":"/test",
 				"screenshot":"/root/screenshots/screenshot.jpg",
 				"code":"200",

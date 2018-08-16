@@ -1,10 +1,5 @@
-### ServiceDescriptor Request
-[Please fill in here the details of what your ServiceDescriptor is describing. When writing these sections, please use the verbiage described in RFC 2119.]
-Example:
+### Path
 The ```Path``` ServiceDescriptor SHALL be used to describe a single directory or file on a webserver. The ```Path``` object MUST be placed inside a list of element and correlated to the key ```Paths``` in the ```serviceDescriptors``` attribute of a ```Service``` object. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below.
-
-[Please fill in here the details of each attribute for this object. When writing these sections, please use the verbiage described in RFC 2119.]
-Example:
 
 The ```Path``` object has the following attributes defined:
 * ```type```* - MUST be the type of object. In this case, ```Path```
@@ -21,8 +16,6 @@ The ```Path``` object has the following attributes defined:
 * ```hash``` - MUST be a map of hashtype to hash of this endpoint's content. This can be used to determine if the contents have changed or for forensic analysis
 
 \* Required attributes
-
-[Please give example usages of the objects bot in JSONLines form and pretty-printed JSON]
 
 Example:
 ```
