@@ -1,6 +1,8 @@
 # ServiceDescriptors
 The ReconJSON standard defines a ```ServiceDescriptor``` object as follows:
-```The ServiceDescriptor object SHALL be used to describe a specific attribute or configuration of the Service object.There MAY be several ServiceDescriptor objects to a single Service object. Since the ServiceDescriptor object is the object in which the specifics about programs are to be stored, it is impossible for the authors of this standard to construct a ServiceDescriptor object for each and every use case. As a result, community sourcing of this attribute is needed.```
+```
+The ServiceDescriptor object SHALL be used to describe a specific attribute or configuration of the Service object.There MAY be several ServiceDescriptor objects to a single Service object. Since the ServiceDescriptor object is the object in which the specifics about programs are to be stored, it is impossible for the authors of this standard to construct a ServiceDescriptor object for each and every use case. As a result, community sourcing of this attribute is needed.
+```
 
 The ```ServiceDescriptor``` objects SHOULD be contributed by the community via pull request to describe all the various pieces of technology that must be described. 
 
