@@ -19,7 +19,7 @@ This format is pure JSON, with the ```Host``` objects collapsed into a single li
 Each ```Host``` object defined in this section MUST follow the standard defined in the ```Host``` section of this document. 
 
 ### Host
-The ```Host``` object SHALL be used to describe a specific profile of a computer. There MAY be multiple ```Host``` objects to a single device, or multiple devices to a single ```Host``` as is seen fit by the user. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. See Host.md file for further usage for the ```Host``` object.
+The ```Host``` object SHALL be used to describe a specific profile of a computer. There MAY be multiple ```Host``` objects to a single device, or multiple devices to a single ```Host``` as is seen fit by the user. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. See [Host.md](Host.md) file for further usage for the ```Host``` object.
 
 The ```Host``` object has the following attributes defined:
 * ```type```* - MUST be the type of object. In this case, ```Host```
@@ -56,7 +56,7 @@ Pretty Printed:
 ]
 ```
 ### DNS
-The ```DNS``` object SHALL be used to describe the DNS configuration of a specific ```Host```. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. See DNS.md file for further usage for the ```Host``` object.
+The ```DNS``` object SHALL be used to describe the DNS configuration of a specific ```Host```. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. See [DNS.md](DNS.md) file for further usage for the ```Host``` object.
 
 
 The ```DNS``` object has the following attributes defined:
@@ -106,7 +106,7 @@ Pretty Printed:
 
 
 ### Port
-The ```PORT``` object SHALL be used to describe the status of the ports on a specific ```Host```. The ```Port``` object MUST be placed inside of one of the two ISO Model Layer 4 categories of the ```Host``` object. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. See Port.md file for further usage for the ```Host``` object.
+The ```PORT``` object SHALL be used to describe the status of the ports on a specific ```Host```. The ```Port``` object MUST be placed inside of one of the two ISO Model Layer 4 categories of the ```Host``` object. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. See [Port.md](Port.md) file for further usage for the ```Host``` object.
 
 
 The ```Port``` object has the following attributes defined:
@@ -154,7 +154,7 @@ Pretty Printed:
 
 
 ### Service
-The ```Service``` object SHALL be used to describe a specific program running on a ```Port``` object. There MAY be several ```Service``` objects to a single ```Port``` object. ```Service``` objects MAY have child objects called ```ServiceDescriptor```(s). These objects are defined in more detail in the ```ServiceDescriptor.md``` file, but they are generally used to give program specific information. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. See Service.md file for further usage for the ```Host``` object.     
+The ```Service``` object SHALL be used to describe a specific program running on a ```Port``` object. There MAY be several ```Service``` objects to a single ```Port``` object. ```Service``` objects MAY have child objects called ```ServiceDescriptor```(s). These objects are defined in more detail in the [ServiceDescriptor.md](ServiceDescriptor.md) file, but they are generally used to give program specific information. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. See Service.md file for further usage for the ```Host``` object.     
 
 The ```Service``` object has the following attributes defined:
 * ```type```* - MUST be the type of object. In this case, ```Service```
@@ -227,5 +227,7 @@ Please note, the below example also includes a ```Service``` object for context.
 	}
 }
 ```
+
 ## Contributing
-If you note any issues with ReconJSON or would like to request an attribute or object be added to the standard, please submit an issue per the templates in the [docs](https://github.com/Rhynorater/reconjson/tree/master/docs) folder. Before submiting any issues please use Github's Issue Search feature to check if there is a similar issue already submitted. 
+
+If you note any issues with ReconJSON or would like to request an attribute or object be added to the standard, please submit an issue per the templates in the [docs](https://github.com/ReconJSON/ReconJSON/tree/master/docs) folder. Before submiting any issues please use Github's Issue Search feature to check if there is a similar issue already submitted. 
