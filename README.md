@@ -81,15 +81,15 @@ The `DNS` object has the following attributes defined:
 Example:
 
 ```
-{
-  {"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","dns":{"type":"DNS","A":["192.168.0.1", "192.168.0.2"],"AAAA":["fe80::1"],"CNAME":["ex.acme.com"],"PTR":["ex.acme.com"],"MX":["example-acme-com.mail.protection.outlook.com"],"NS":["nameserver.acme.com"],TXT":["txtRecordString"]}}
-}
+[
+{"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","dns":{"type":"DNS","A":["192.168.0.1", "192.168.0.2"],"AAAA":["fe80::1"],"CNAME":["ex.acme.com"],"PTR":["ex.acme.com"],"MX":["example-acme-com.mail.protection.outlook.com"],"NS":["nameserver.acme.com"],TXT":["txtRecordString"]}}
+]
 ```
 
 Pretty Printed:
 
 ```
-{
+[
   {
     "type":"Host",
     "fqdn":"example.acme.com",
@@ -107,7 +107,7 @@ Pretty Printed:
       "TXT":["txtRecordString"]
     },
   }
-}
+]
 ```
 
 ### Port
@@ -125,13 +125,15 @@ The `Port` object has the following attributes defined:
 Example:
 
 ```
-{{"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","ports":{"tcp":[{"type":"Port","port":"22","state":"open"},{"type":"Port","port":"80","state":"open","services":[...]}],"udp":[]}}}
+[
+{"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","ports":{"tcp":[{"type":"Port","port":"22","state":"open"},{"type":"Port","port":"80","state":"open","services":[...]}],"udp":[]}}
+]
 ```
 
 Pretty Printed:
 
 ```
-{
+[
   {
     "type":"Host",
     "fqdn":"example.acme.com",
@@ -155,7 +157,7 @@ Pretty Printed:
       "udp":[]
     }
   }
-}
+]
 ```
 
 ### Service
@@ -173,29 +175,33 @@ The `Service` object has the following attributes defined:
 Example:
 
 ```
+[
 {"type":"Service","protocol":"http","banner":"Apache 1.0","serviceDescriptors":{"Directories":[{"type":"ServiceDescriptor","path":"/test","screenshot":"/root/screenshots/screenshot.jpg","code":"200","content-type":"text/html","length":"1024"}]}}
+]
 ```
 
 Pretty Printed:
 
 ```
-{
-  "type":"Service",
-  "protocol":"http",
-  "banner":"Apache 1.0",
-  "serviceDescriptors":{
-    "Directories":[
-      {
-        "type":"ServiceDescriptor",
-        "path":"/test",
-        "screenshot":"/root/screenshots/screenshot.jpg",
-        "code":"200",
-        "content-type":"text/html",
-        "length":"1024"
-      }
-    ]
+[
+  {
+    "type":"Service",
+    "protocol":"http",
+    "banner":"Apache 1.0",
+    "serviceDescriptors":{
+      "Directories":[
+        {
+          "type":"ServiceDescriptor",
+          "path":"/test",
+          "screenshot":"/root/screenshots/screenshot.jpg",
+          "code":"200",
+          "content-type":"text/html",
+          "length":"1024"
+        }
+      ]
+    }
   }
-}
+]
 ```
 
 ### ServiceDescriptor
@@ -213,30 +219,34 @@ The `ServiceDescriptor` object has the following attributes defined:
 Please note, the below example also includes a `Service` object for context:
 
 ```
+[
 {"type":"Service","protocol":"http","banner":"Apache 1.0","serviceDescriptors":{"Directories":[{"type":"ServiceDescriptor","name":"Directories","path":"/test","screenshot":"/root/screenshots/screenshot.jpg","code":"200","content-type":"text/html","length":"1024"}]}}
+]
 ```
 
 Please note, the below example also includes a `Service` object for context:
 
 ```
-{
-  "type":"Service",
-  "protocol":"http",
-  "banner":"Apache 1.0",
-  "serviceDescriptors":{
-    "Directories":[
-      {
-        "type":"ServiceDescriptor",
-        "name":"Directories"
-        "path":"/test",
-        "screenshot":"/root/screenshots/screenshot.jpg",
-        "code":"200",
-        "content-type":"text/html",
-        "length":"1024"
-      }
-    ]
+[
+  {
+    "type":"Service",
+    "protocol":"http",
+    "banner":"Apache 1.0",
+    "serviceDescriptors":{
+      "Directories":[
+        {
+          "type":"ServiceDescriptor",
+          "name":"Directories"
+          "path":"/test",
+          "screenshot":"/root/screenshots/screenshot.jpg",
+          "code":"200",
+          "content-type":"text/html",
+          "length":"1024"
+        }
+      ]
+    }
   }
-}
+]
 ```
 
 ## Contributing
