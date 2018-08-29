@@ -12,35 +12,33 @@ The ```Port``` object has the following attributes defined:
 
 Example:
 ```
-{{"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","ports":{"tcp":[{"type":"Port","port":"22","state":"open"},{"type":"Port","port":"80","state":"open","services":[...]}],"udp":[]}}}
+{"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","ports":{"tcp":[{"type":"Port","port":"22","state":"open"},{"type":"Port","port":"80","state":"open","services":[...]}],"udp":[]}}
 ```
 
 
 Pretty Printed:
 ```
- {
-		{
-			"type":"Host",
-			"fqdn":"example.acme.com",
-			"ip":"192.168.0.1",
-			"domain":"acme.com",
-			"company":"Acme",
-			"ports":{
-				"tcp":[
-					{
-						"type":"Port",
-						"port":"22"
-						"state":"open"
-					},
-					{
-						"type":"Port",
-						"port":"80",
-						"state":"open",
-						"services":[...]
-					}
-				],
-				"udp":[]
+{
+	"type":"Host",
+	"fqdn":"example.acme.com",
+	"ip":"192.168.0.1",
+	"domain":"acme.com",
+	"company":"Acme",
+	"ports":{
+		"tcp":[
+			{
+				"type":"Port",
+				"port":"22"
+				"state":"open"
+			},
+			{
+				"type":"Port",
+				"port":"80",
+				"state":"open",
+				"services":[...]
 			}
+		],
+		"udp":[]
 		}
 }
 ```
