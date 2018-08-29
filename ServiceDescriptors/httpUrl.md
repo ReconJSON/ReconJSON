@@ -9,9 +9,9 @@ The ```httpUrl``` object has the following attributes defined:
 * ```paramsContentType``` - MUST be the format in which the `params` field is stored. The value of this field MUST be one of the following: application/x-www-form-urlencoded, multipart/form-data, application/json, or application/xml. 
 * ```params``` - MUST be any HTTP parameters sent along with this request. The format of the data stored in this field is described by `paramsContentType`. 
 * ```screenshot``` - MUST be the path to an image file that represents the contents of this endpoint
-* ```code``` - MUST be the HTTP Status code returned by either a GET request (by default) or the HTTP Verb described in the ```verb``` attribute
+* ```code``` - MUST be the HTTP Status code returned by either a GET request (by default) or the HTTP Verb described in the ```verb``` attribute. This attribute MUST be an integer. 
 * ```contentType``` - MUST be the content-type returned by either a GET request (by default) or the HTTP Verb described in the ```verb``` attribute
-* ```length``` - MUST be the length of the request returned by either a GET request (by default) or the HTTP Verb described in the ```verb``` attribute
+* ```length``` - MUST be the length of the request returned by either a GET request (by default) or the HTTP Verb described in the ```verb``` attribute. This attribute MUST be an integer. 
 * ```headers``` - MUST be a map of relevant headers not included above
 * ```file``` - MUST be the file requested by the path above
 * ```fileExt``` - MUST be the file extention of the file requested by the path above. This MUST not contain the . (dot). For example, a valid entry would be ```php``` not ```.php```
@@ -21,7 +21,7 @@ The ```httpUrl``` object has the following attributes defined:
 
 Example:
 ```
-{"type":"Service","protocol":"http","banner":"Apache 1.0","serviceDescriptors":{"httpUrls":[{"type":"ServiceDescriptor","name":"httpUrl","path":"/testing/test.php","screenshot":"/root/screenshots/screenshot.jpg","code":"200","content-type":"text/html","length":"1024","verb":"POST","headers":{"Server":"Apache"},"file":"test.php","fileExt":"php","hash":"8eab2974f483d66532d8e44120877c14"}]}}
+{"type":"Service","protocol":"http","banner":"Apache 1.0","serviceDescriptors":{"httpUrls":[{"type":"ServiceDescriptor","name":"httpUrl","path":"/testing/test.php","screenshot":"/root/screenshots/screenshot.jpg","code":200,"content-type":"text/html","length":1024,"verb":"POST","headers":{"Server":"Apache"},"file":"test.php","fileExt":"php","hash":"8eab2974f483d66532d8e44120877c14"}]}}
 ```
 
 
@@ -38,9 +38,9 @@ Pretty Printed:
 				"name":"httpUrl",
 				"path":"/testing/test.php",
 				"screenshot":"/root/screenshots/screenshot.jpg",
-				"code":"200",
+				"code":200,
 				"content-type":"text/html",
-				"length":"1024",
+				"length":1024,
 				"verb":"POST",
 				"headers":{"Server":"Apache"},
 				"file":"test.php",
