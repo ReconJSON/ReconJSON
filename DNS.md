@@ -17,32 +17,27 @@ The ```DNS``` object has the following attributes defined:
 Example:
 
 ```
-{
-		{"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","dns":{"type":"DNS","A":["192.168.0.1", "192.168.0.2"],"AAAA":["fe80::1"],"CNAME":["ex.acme.com"],"PTR":["ex.acme.com"],"MX":["example-acme-com.mail.protection.outlook.com"],"NS":["nameserver.acme.com"],TXT":["txtRecordString"]}}
-}
-
+{"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","dns":{"type":"DNS","A":["192.168.0.1", "192.168.0.2"],"AAAA":["fe80::1"],"CNAME":["ex.acme.com"],"PTR":["ex.acme.com"],"MX":["example-acme-com.mail.protection.outlook.com"],"NS":["nameserver.acme.com"],TXT":["txtRecordString"]}}
 ```
 
 Pretty Printed:
 
 ```
 {
-		{
-			"type":"Host",
-			"fqdn":"example.acme.com",
-			"ip":"192.168.0.1",
-			"domain":"acme.com",
-			"company":"Acme",
-			"dns":{
-				"type":"DNS",
-				"A":["192.168.0.1", "192.168.0.2"],
-				"AAAA":["fe80::1"],
-				"CNAME":["ex.acme.com"],
-				"PTR":["ex.acme.com"],
-				"MX":["example-acme-com.mail.protection.outlook.com"],
-				"NS":["nameserver.acme.com"],
-				"TXT":["txtRecordString"]
-			},
-		}
+	"type":"Host",
+	"fqdn":"example.acme.com",
+	"ip":"192.168.0.1",
+	"domain":"acme.com",
+	"company":"Acme",
+	"dns":{
+		"type":"DNS",
+		"A":["192.168.0.1", "192.168.0.2"],
+		"AAAA":["fe80::1"],
+		"CNAME":["ex.acme.com"],
+		"PTR":["ex.acme.com"],
+		"MX":["example-acme-com.mail.protection.outlook.com"],
+		"NS":["nameserver.acme.com"],
+		"TXT":["txtRecordString"]
+	},
 }
 ```
