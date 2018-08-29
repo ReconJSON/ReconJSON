@@ -1,5 +1,5 @@
 ### httpUrl
-The ```httpUrl``` ServiceDescriptor SHALL be used to describe a single directory or file on a webserver. The ```httpUrl``` object MUST be placed inside a list of element and correlated to the key ```httpUrls``` in the ```serviceDescriptors``` attribute of a ```Service``` object. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below.
+The ```httpUrl``` ServiceDescriptor SHALL be used to describe a single directory or file on a webserver. The ```httpUrl``` object MUST be placed inside a list of element and correlated to the key ```httpUrls``` in the ```serviceDescriptors``` attribute of a ```Service``` object. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. The `httpUrl` serviceDescriptor MAY be used to describe both HTTPS and HTTP protocol.
 
 The ```httpUrl``` object has the following attributes defined:
 * ```type```* - MUST be the type of object. In this case, ```httpUrl```
