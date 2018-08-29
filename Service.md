@@ -5,7 +5,7 @@ The ```Service``` object has the following attributes defined:
 * ```type```* - MUST be the type of object. In this case, ```Service```
 * ```protocol``` - MUST be the protocol by which this ```Service``` communicates	
 * ```banner``` - MUST be the banner that identifies this ```Service```
-* ```serviceDescriptors``` - MUST be a map of the ```name``` of a certain ```ServiceDescriptor``` IN THE PLURAL to a list of these objects (even if there is only one ServiceDescriptor). This allows a user to quickly access only the ```ServiceDescriptor``` desired.
+* ```serviceDescriptors``` - MUST be a key-value pairing of the ```name``` of a certain ```ServiceDescriptor``` IN THE PLURAL to a list of these objects (even if there is only one ServiceDescriptor). This allows a user to quickly access only the ```ServiceDescriptor``` desired.
 
 \* Required attributes
 
