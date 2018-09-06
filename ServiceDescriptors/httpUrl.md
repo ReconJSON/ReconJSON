@@ -1,21 +1,25 @@
 ### httpUrl
 The ```httpUrl``` ServiceDescriptor SHALL be used to describe a single directory or file on a webserver. The ```httpUrl``` object MUST be placed inside a list of element and correlated to the key ```httpUrls``` in the ```serviceDescriptors``` attribute of a ```Service``` object. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. The `httpUrl` serviceDescriptor MAY be used to describe both HTTPS and HTTP protocol.
 
+Both the `host` and `scheme` fields SHOULD be derived from the context (`Host` object and `Service` object respectively). However, if there is a case where a tool wishes to return only the ServiceDescriptor `httpUrl` then they may be used to describe the `Host` and `Service` to which this `httpUrl` belongs. 
+
 The ```httpUrl``` object has the following attributes defined:
 * ```type```* - MUST be the type of object. In this case, ```httpUrl```
 * ```name```* - MUST be a descriptive name of what data this ```ServiceDescriptor``` is describing
-* ```path```* - MUST be the path requested where path is defined by RFC 3986 section 3.3
+* ```path```* - MUST be the relative path requested where path is defined by RFC 3986 section 4.2
 * ```verb```* - MUST be the the HTTP Verb used in the request to this path.
 * ```paramsContentType``` - MUST be the format in which the `params` field is stored. The value of this field MUST be one of the following: application/x-www-form-urlencoded, multipart/form-data, application/json, or application/xml. 
 * ```params``` - MUST be any HTTP parameters sent along with this request. The format of the data stored in this field is described by `paramsContentType`. 
-* ```screenshot``` - MUST be the path to an image file that represents the contents of this endpoint
-* ```code``` - MUST be the HTTP Status code returned by either a GET request (by default) or the HTTP Verb described in the ```verb``` attribute. This attribute MUST be an integer. 
-* ```contentType``` - MUST be the content-type returned by either a GET request (by default) or the HTTP Verb described in the ```verb``` attribute
-* ```length``` - MUST be the length of the request returned by either a GET request (by default) or the HTTP Verb described in the ```verb``` attribute. This attribute MUST be an integer. 
-* ```headers``` - MUST be a map of relevant headers not included above
-* ```file``` - MUST be the file requested by the path above
-* ```fileExt``` - MUST be the file extention of the file requested by the path above. This MUST not contain the . (dot). For example, a valid entry would be ```php``` not ```.php```
-* ```hash``` - MUST be a map of hashtype to hash of this endpoint's content. This can be used to determine if the contents have changed or for forensic analysis
+* ```screenshot``` - MUST be the path to an image file that represents the contents of this endpoint.
+* ```host``` - MUST be the fully qualfied domain name that such that `host` + `path` defines the endpoint described. The scheme MUST NOT be included.
+* ```scheme``` - MUST be either `http` or `https`. 
+* ```code``` - MUST be the HTTP Status code returned by the HTTP Verb described in the ```verb``` attribute. This attribute MUST be an integer. 
+* ```contentType``` - MUST be the content-type returned by  the HTTP Verb described in the ```verb``` attribute
+* ```length``` - MUST be the length of the request returned by the HTTP Verb described in the ```verb``` attribute. This attribute MUST be an integer. 
+* ```headers``` - MUST be a map of relevant headers not included above.
+* ```file``` - MUST be the file requested by the path above.
+* ```fileExt``` - MUST be the file extention of the file requested by the path above. This MUST not contain the . (dot). For example, a valid entry would be ```php``` not ```.php```.
+* ```hash``` - MUST be a map of hashtype to hash of this endpoint's content. This can be used to determine if the contents have changed or for forensic analysis.
 
 \* Required attributes
 
