@@ -18,6 +18,8 @@ The first line of a ReconJSON file MUST be a left bracket `[` (ASCII 91) and the
 
 This format is pure JSON, with the `Host` objects collapsed into a single line. The reasoning behind this decision is to provide a file that can easily be parsed by programming languages' JSON libraries while also producing a file that is grep-able and one which a simple `wc -l` command will immediately convey the correct number of hosts to the user (number of lines - 2). 
 
+When placing data into arrays, the data SHOULD be sorted alphabetically (or numerically) if not otherwise specified. 
+
 
 ## Types
 The following types are defined within the ReconJSON standard:
