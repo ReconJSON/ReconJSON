@@ -6,10 +6,10 @@ Both the `host` and `scheme` fields SHOULD be derived from the context (`Host` o
 The ```httpUrl``` object has the following attributes defined:
 * ```type```* - MUST be the type of object. In this case, ```httpUrl```
 * ```name```* - MUST be a descriptive name of what data this ```ServiceDescriptor``` is describing
-* ```path```* - MUST be the relative path requested where path is defined by RFC 3986 section 4.2
+* ```path```* - MUST be the relative path requested where path is defined by RFC 3986 section 4.2. MUST start with a slash.
 * ```verb```* - MUST be the the HTTP Verb used in the request to this path.
 * ```paramsContentType``` - MUST be the format in which the `params` field is stored. The value of this field MUST be one of the following: application/x-www-form-urlencoded, multipart/form-data, application/json, or application/xml. 
-* ```params``` - MUST be any HTTP parameters sent along with this request. The format of the data stored in this field is described by `paramsContentType`. 
+* ```params``` - MUST be any HTTP parameters sent along with this request. The format of the data stored in this field is described by `paramsContentType`. MUST NOT start with a `?` if placed in a GET request - this is a part of the structure not the parameter itself.
 * ```screenshot``` - MUST be the path to an image file that represents the contents of this endpoint.
 * ```host``` - MUST be the fully qualfied domain name that such that `host` + `path` defines the endpoint described. The scheme MUST NOT be included.
 * ```scheme``` - MUST be either `http` or `https`. 
@@ -20,6 +20,7 @@ The ```httpUrl``` object has the following attributes defined:
 * ```file``` - MUST be the file requested by the path above.
 * ```fileExt``` - MUST be the file extention of the file requested by the path above. This MUST not contain the . (dot). For example, a valid entry would be ```php``` not ```.php```.
 * ```hash``` - MUST be a map of hashtype to hash of this endpoint's content. This can be used to determine if the contents have changed or for forensic analysis.
+* `data` - Must be the path to the file containing the data returned in the body of this request. 
 
 \* Required attributes
 
@@ -43,13 +44,16 @@ Pretty Printed:
 				"path":"/testing/test.php",
 				"screenshot":"/root/screenshots/screenshot.jpg",
 				"code":200,
+				"paramsContentType":"application/x-www-form-urlencoded",
+				"params":"name=John&date=1-1-2018",
 				"content-type":"text/html",
 				"length":1024,
 				"verb":"POST",
 				"headers":{"Server":"Apache"},
 				"file":"test.php",
 				"fileExt":"php",
-				"hash": {"md5":"8eab2974f483d66532d8e44120877c14"}
+				"hash":{"md5":"8eab2974f483d66532d8e44120877c14"},
+				"data":"/root/files/test-1-1-2018.php"
 
 			}
 		]
