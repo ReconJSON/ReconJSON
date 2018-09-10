@@ -13,13 +13,13 @@ The `httpsCert` object has the following attributes defined:
 * `notBefore` - MUST be the not before date, in RFC3339 format (e.g. 2016-06-16T00:00:00-00:00) .
 * `notAfter` - MUST be the not after date, in RFC3339 format (e.g. 2016-06-16T00:00:00-00:00).
 * `logs` - A list of key-value pairs describing the Certificate Transparency logs containing this (pre-)certificate. Example: `{"id":"7ku9t3XOYLrhQmkfq+GeZqMPfl+wctiDAMR7iXqo/cs=","index":385319610,"timestamp":"2018-08-16T00:20:43.850-00:00"}`.
-* * `id` - The ID of the Certificate Transparency log, encoded in base64.
-* * `index` - The 0-based index of the (pre-)certificate's entry in the log.
-* * `timestamp` - The time at which the (pre-)certificate was submitted to this log, in RFC3339 format (e.g. 2017-05-04T13:39:21.071-00:00).
+	* `id` - The ID of the Certificate Transparency log, encoded in base64.
+	* `index` - The 0-based index of the (pre-)certificate's entry in the log.
+	* `timestamp` - The time at which the (pre-)certificate was submitted to this log, in RFC3339 format (e.g. 2017-05-04T13:39:21.071-00:00).
 
-\* Requirex attributes
+\* Required attributes
 
-Shout out to CertSpotter for making this definition a lot easier with (the CertSpotter API)[https://sslmate.com/certspotter/api].
+Shout out to CertSpotter for making this definition a lot easier with [the CertSpotter API](https://sslmate.com/certspotter/api).
 
 Example (`Host` and `Port` Objects ommitted for brevity):
 ```
