@@ -3,7 +3,7 @@
 
 Which object should this attribute be a part of?
 
-Please give an example usage of the attribute to describe ```acme.com```: 
+Please give an example usage of the attribute to describe `acme.com`: 
 
 Is (or will) this attibute be supported by any tools?
 
