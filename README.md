@@ -1,7 +1,9 @@
 # [DRAFT] ReconJSON - A JSON-based Recon Data Standard
+
 ReconJSON is a project dedicated to creating a flexible and consistent JSON format across popular recon tools. ReconJSON's format (obviously) is a valid JSON structure. This structure is designed to hold information about Hosts. Hosts objects are described by the set of attributes and other types defined in the standard below. Additions can be requested via the protocol in the "Contributing" section. 
 
 ## Structure
+
 A file the conforms to the ReconJSON standard MUST have the `.json` extension. Any name for the file is permitted. 
 The internal structure of a ReconJSON file MUST be as follows:
 
@@ -22,6 +24,7 @@ When placing data into arrays, the data SHOULD be sorted alphabetically (or nume
 
 
 ## Types
+
 The following types are defined within the ReconJSON standard:
 * `Host`: The object used to describe a specific profile of a computer. For more details, see [Host.md](/Host.md)
 * `Port`: The object used to describe the status of the ports on a specific `Host`. For more details, see [Port.md](/Port.md)
