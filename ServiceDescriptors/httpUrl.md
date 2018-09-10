@@ -4,8 +4,8 @@ The ```httpUrl``` `ServiceDescriptor` SHALL be used to describe a single directo
 Both the `host` and `scheme` fields SHOULD be derived from the context (`Host` object and `Service` object respectively). However, if there is a case where a tool wishes to return only the ServiceDescriptor `httpUrl` then they may be used to describe the `Host` and `Service` to which this `httpUrl` belongs. 
 
 The ```httpUrl``` object has the following attributes defined:
-* ```type```* - MUST be the type of object. In this case, ```httpUrl```
-* ```name```* - MUST be a descriptive name of what data this ```ServiceDescriptor``` is describing
+* ```type```* - MUST be the type of object. In this case, ```ServiceDescriptor```
+* ```name```* - MUST be the name of this `ServiceDescriptor`. In this case, `httpUrl`.
 * ```path```* - MUST be the relative path requested where path is defined by RFC 3986 section 4.2. MUST start with a slash.
 * ```verb```* - MUST be the the HTTP Verb used in the request to this path.
 * ```paramsContentType``` - MUST be the format in which the `params` field is stored. The value of this field MUST be one of the following: application/x-www-form-urlencoded, multipart/form-data, application/json, or application/xml. 
