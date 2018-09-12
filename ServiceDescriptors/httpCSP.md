@@ -27,7 +27,7 @@ Pretty Printed:
                 "type":"ServiceDescriptor",
                 "name":"httpCsp",
                 "location":"http-header",
-                "script-src":"'self' https://",
+                "script-src":"'self' https:",
                 "object-src": "'none'"
             }
         ]
