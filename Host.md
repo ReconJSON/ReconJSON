@@ -8,19 +8,22 @@ The `Host` object has the following attributes defined:
 * `ip`** - MUST be the IPv4 or IPv6 address to route to this `Host`
 * `domain` - MUST be the [second-level domain](https://en.wikipedia.org/wiki/Second-level_domain) for this `Host`
 * `company` - MUST be the company which owns this `Host` 
-* `dns` - MUST be the `DNS` object(s) that describe(s) this `Host`
-* `ports` - MUST be the `Port` object(s) that describe(s) this `Host`. The `Port` object(s) MUST be sorted by ISO Model Layer 4 protocol into either the `tcp` or the `udp` categories. If either of the `tcp` or `udp` categories are empty, they MUST still be included. However, if both `tcp` and `udp`  are empty, the `ports` attribute MUST be excluded.
+* `dns` - MUST be the [`DNS`](DNS.md) object(s) that describe(s) this `Host`
+* `ports` - MUST be the [`Port`](Port.md) object(s) that describe(s) this `Host`. The [`Port`](Port.md) object(s) MUST be sorted by ISO Model Layer 4 protocol into either the `tcp` or the `udp` categories. If either of the `tcp` or `udp` categories are empty, they MUST still be included. However, if both `tcp` and `udp`  are empty, the `ports` attribute MUST be excluded.
 
 \* Required attributes  
 \*\* At least one of these attributes is required  
   
 Example:
+
 ```
 [
 {"type":"Host","fqdn":"example.acme.com","ip":"192.168.0.1","domain":"acme.com","company":"Acme","dns":{...},"ports":{"tcp":[...],"udp":[...]}}
 ]
 ```
+
 Pretty Printed:
+
 ```
 [
     {
