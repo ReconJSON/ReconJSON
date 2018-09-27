@@ -9,7 +9,7 @@ The `httpCsp` object has the following attributes defined:
 
 The other attributes of this object are simply all supported CSP Directives, as listed [in the spec](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy#Directives), as the key, and the policies of the respective CSP Directives as the values. 
 
-Example (`Host` and `Port` Objects ommitted for brevity):
+Example (`Host` and `Service` objects ommitted for brevity):
 ```
 {"type":"ServiceDescriptor","protocol":"https","banner":"Apache 1.0","serviceDescriptors":{"httpsCsps":[{"type":"ServiceDescriptor","name":"httpCsp","location":"http-header","script-src":"'self' https://","object-src":"'none'"}]}}
 ```

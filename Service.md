@@ -1,6 +1,6 @@
 ### Service
 
-The `Service` object SHALL be used to describe a specific program running on a `Port` object. There MAY be several `Service` objects to a single `Port` object. `Service` objects MAY have child objects called `ServiceDescriptor`(s). These objects are defined in more detail in the `ServiceDescriptor.md` file, but they are generally used to give program specific information. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below.  
+The `Service` object SHALL be used to describe a specific program running on a port. There MAY only be one [`Service`](Service.md) object per port in the [`Host`](Host.md) object's `port` attribute. `Service` objects MAY have child objects called `ServiceDescriptor`(s). These objects are defined in more detail in the `ServiceDescriptor.md` file, but they are generally used to give program specific information. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below.  
 
 The `Service` object has the following attributes defined:
 * `type`* - MUST be the type of object. In this case, `Service`

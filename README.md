@@ -27,9 +27,8 @@ When placing data into arrays, the data SHOULD be sorted alphabetically (or nume
 
 The following types are defined within the ReconJSON standard:
 * `Host`: The object used to describe a specific profile of a computer. For more details, see [Host.md](/Host.md)
-* `Port`: The object used to describe the status of the ports on a specific `Host`. For more details, see [Port.md](/Port.md)
 * `DNS`: The object used to describe the DNS configuration of a specific `Host`. For more details, see [DNS.md](/DNS.md)
-* `Service`: The object used to describe a specific program running on a `Port` object. For more details, see [Service.md](/Service.md)
+* `Service`: The object used to describe a specific program running on a port. For more details, see [Service.md](/Service.md)
 * `ServiceDescriptor`: The object used to describe a specific attribute or configuration of the `Service` object. For more details, see both the `ServiceDescriptor` spec doc ([ServiceDescriptor.md](/ServiceDescriptor.md)) and the `ServiceDescriptors` folder ([ServiceDescriptors](/ServiceDescriptors))
 
 
