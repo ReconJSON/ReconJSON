@@ -7,13 +7,13 @@ The `Service` object has the following attributes defined:
 * `active` - MUST be the Boolean variable representing whether this service is active or not. `true` for active, `false` for inactive. If this value is not set, the service SHOULD be assumed to be be active.
 * `protocol` - MUST be the protocol by which this `Service` communicates	
 * `banner` - MUST be the banner that identifies this `Service`
-* `serviceDescriptors` - MUST be a key-value pairing of the `name` of a certain `ServiceDescriptor` IN THE PLURAL to a list of these objects (even if there is only one ServiceDescriptor). This allows a user to quickly access only the `ServiceDescriptor` desired.
+* `serviceDescriptors` - MUST be a key-value pairing of the `name` of a certain `ServiceDescriptor` IN THE SINGULAR to a list of these objects. This allows a user to quickly access only the `ServiceDescriptor` desired.
 
 \* Required attributes
 
 Example:
 ```
-{"type":"Service","protocol":"http","banner":"Apache 1.0","serviceDescriptors":{"Directories":[{"type":"ServiceDescriptor","path":"/test","screenshot":"/root/screenshots/screenshot.jpg","code":"200","content-type":"text/html","length":"1024"}]}}
+{"type":"Service","protocol":"http","banner":"Apache 1.0","serviceDescriptors":{"httpUrl":[{"type":"ServiceDescriptor","path":"/test","screenshot":"/root/screenshots/screenshot.jpg","code":"200","content-type":"text/html","length":"1024"}]}}
 ```
 
 Pretty Printed:
@@ -23,10 +23,10 @@ Pretty Printed:
     "protocol":"http",
     "banner":"Apache 1.0",
     "serviceDescriptors":{
-        "Paths":[
+        "httpUrl":[
             {
                 "type":"ServiceDescriptor",
-                "name":"Path",
+                "name":"httpUrl",
                 "path":"/test",
                 "screenshot":"/root/screenshots/screenshot.jpg",
                 "code":"200",
