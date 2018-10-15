@@ -1,6 +1,6 @@
 ### DNS
 
-The `DNS` object SHALL be used to describe the DNS configuration of a specific `Host`. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. See DNS.md file for futher usage for the `Host` object.
+The `DNS` object SHALL be used to describe the DNS configuration of a specific `Host`. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. See DNS.md file for futher usage for the [`Host`](Host.md) object(s).
 
 
 The `DNS` object has the following attributes defined:
