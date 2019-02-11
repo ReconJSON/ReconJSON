@@ -11,7 +11,7 @@ The other attributes of this object are simply all supported CSP Directives, as 
 
 Example (`host` and `service` objects ommitted for brevity):
 ```
-{"type":"serviceDescriptor","protocol":"https","banner":"Apache 1.0","serviceDescriptors":{"httpsCsps":[{"type":"serviceDescriptor","name":"httpCsp","location":"http-header","script-src":"'self' https://","object-src":"'none'"}]}}
+{"type":"serviceDescriptor","protocol":"https","banner":"Apache 1.0","serviceDescriptors":{"httpsCsps":[{"type":"serviceDescriptor","name":"httpCsp","location":"http-header","scriptSrc":"'self' https://","objectSrc":"'none'"}]}}
 ```
 
 
@@ -27,8 +27,8 @@ Pretty Printed:
                 "type":"serviceDescriptor",
                 "name":"httpCsp",
                 "location":"http-header",
-                "script-src":"'self' https:",
-                "object-src": "'none'"
+                "scriptSrc":"'self' https:",
+                "objectSrc": "'none'"
             }
         ]
     }

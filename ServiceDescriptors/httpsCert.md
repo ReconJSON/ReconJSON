@@ -1,6 +1,6 @@
 ### httpsCert
 
-The `httpsCert` `serviceDescriptor` SHALL be used to describe HTTPS (X.509) (pre-)cerficates. The `httpsCert` `serviceDescriptor` strongly SHOULD be placed inside a list of element and correlated to the key `httpsCerts` in the `serviceDescriptors` attribute of a `Service` object. HOWEVER, it MAY be returned in list format if it is impossible to correlate the certificate with a `Host` object. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. 
+The `httpsCert` `serviceDescriptor` SHALL be used to describe HTTPS (X.509) (pre-)cerficates. The `httpsCert` `serviceDescriptor` strongly SHOULD be placed inside a list of element and correlated to the key `httpsCerts` in the `serviceDescriptors` attribute of a `service` object. HOWEVER, it MAY be returned in list format if it is impossible to correlate the certificate with a `Host` object. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. 
 
 The `httpsCert` object has the following attributes defined:
 * `type`* - MUST be the type of object. In this case, `serviceDescriptor`.

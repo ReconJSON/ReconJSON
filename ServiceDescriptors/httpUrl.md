@@ -27,7 +27,7 @@ The `httpUrl` object has the following attributes defined:
 
 Example:
 ```
-{"type":"service","protocol":"http","banner":"Apache 1.0","serviceDescriptors":{"httpUrls":[{"type":"serviceDescriptor","name":"httpUrl","path":"/testing/test.php","screenshot":"/root/screenshots/screenshot.jpg","code":200,"content-type":"text/html","length":1024,"verb":"POST","headers":{"Server":"Apache"},"file":"test.php","fileExt":"php","hash":{"md5":"8eab2974f483d66532d8e44120877c14"}}]}}
+{"type":"service","protocol":"http","banner":"Apache 1.0","serviceDescriptors":{"httpUrls":[{"type":"serviceDescriptor","name":"httpUrl","path":"/testing/test.php","screenshot":"/root/screenshots/screenshot.jpg","code":200,"contentType":"text/html","length":1024,"verb":"POST","headers":{"Server":"Apache"},"file":"test.php","fileExt":"php","hash":{"md5":"8eab2974f483d66532d8e44120877c14"}}]}}
 ```
 
 
@@ -47,7 +47,7 @@ Pretty Printed:
                 "code":200,
                 "paramsContentType":"application/x-www-form-urlencoded",
                 "params":"name=John&date=1-1-2018",
-                "content-type":"text/html",
+                "contentType":"text/html",
                 "length":1024,
                 "verb":"POST",
                 "headers":{"Server":"Apache"},
