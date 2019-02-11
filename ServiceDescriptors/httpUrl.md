@@ -1,12 +1,12 @@
 ### httpUrl
 
-The `httpUrl` `ServiceDescriptor` SHALL be used to describe a single directory or file on a webserver. The `httpUrl` object strongly SHOULD be placed inside a list of element and correlated to the key `httpUrls` in the `serviceDescriptors` attribute of a `Service` object. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. The `httpUrl` `ServiceDescriptor` MAY be used to describe both HTTPS and HTTP protocol.
+The `httpUrl` `serviceDescriptor` SHALL be used to describe a single directory or file on a webserver. The `httpUrl` object strongly SHOULD be placed inside a list of element and correlated to the key `httpUrls` in the `serviceDescriptors` attribute of a `service` object. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below. The `httpUrl` `serviceDescriptor` MAY be used to describe both HTTPS and HTTP protocol.
 
-Both the `host` and `scheme` fields SHOULD be derived from the context (`Host` object and `Service` object respectively). However, if there is a case where a tool wishes to return only the ServiceDescriptor `httpUrl` then they may be used to describe the `Host` and `Service` to which this `httpUrl` belongs. 
+Both the `host` and `scheme` fields SHOULD be derived from the context (`Host` object and `service` object respectively). However, if there is a case where a tool wishes to return only the serviceDescriptor `httpUrl` then they may be used to describe the `Host` and `service` to which this `httpUrl` belongs. 
 
 The `httpUrl` object has the following attributes defined:
-* `type`* - MUST be the type of object. In this case, `ServiceDescriptor`
-* `name`* - MUST be the name of this `ServiceDescriptor`. In this case, `httpUrl`.
+* `type`* - MUST be the type of object. In this case, `serviceDescriptor`
+* `name`* - MUST be the name of this `serviceDescriptor`. In this case, `httpUrl`.
 * `path`* - MUST be the relative path requested where path is defined by RFC 3986 section 4.2. MUST start with a slash.
 * `verb`* - MUST be the the HTTP Verb used in the request to this path.
 * `paramsContentType` - MUST be the format in which the `params` field is stored. The value of this field MUST be one of the following: application/x-www-form-urlencoded, multipart/form-data, application/json, or application/xml. 
@@ -27,20 +27,20 @@ The `httpUrl` object has the following attributes defined:
 
 Example:
 ```
-{"type":"Service","protocol":"http","banner":"Apache 1.0","serviceDescriptors":{"httpUrls":[{"type":"ServiceDescriptor","name":"httpUrl","path":"/testing/test.php","screenshot":"/root/screenshots/screenshot.jpg","code":200,"content-type":"text/html","length":1024,"verb":"POST","headers":{"Server":"Apache"},"file":"test.php","fileExt":"php","hash":{"md5":"8eab2974f483d66532d8e44120877c14"}}]}}
+{"type":"service","protocol":"http","banner":"Apache 1.0","serviceDescriptors":{"httpUrls":[{"type":"serviceDescriptor","name":"httpUrl","path":"/testing/test.php","screenshot":"/root/screenshots/screenshot.jpg","code":200,"content-type":"text/html","length":1024,"verb":"POST","headers":{"Server":"Apache"},"file":"test.php","fileExt":"php","hash":{"md5":"8eab2974f483d66532d8e44120877c14"}}]}}
 ```
 
 
 Pretty Printed:
 ```
 {
-    "type":"Service",
+    "type":"service",
     "protocol":"http",
     "banner":"Apache 1.0",
     "serviceDescriptors":{
         "httpUrls":[
             {
-                "type":"ServiceDescriptor",
+                "type":"serviceDescriptor",
                 "name":"httpUrl",
                 "path":"/testing/test.php",
                 "screenshot":"/root/screenshots/screenshot.jpg",

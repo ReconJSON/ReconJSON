@@ -9,16 +9,16 @@ The internal structure of a ReconJSON file MUST be as follows:
 
 ```
 [
-{"type":"Host"},
-{"type":"Host"},
-{"type":"Host"},
-{"type":"Host"}
+{"type":"host"},
+{"type":"host"},
+{"type":"host"},
+{"type":"host"}
 ]
 ```
 
-The first line of a ReconJSON file MUST be a left bracket `[` (ASCII 91) and the last line MUST be a right bracket `]` (ASCII 93). In between these brackets MUST be one or more `Host` objects. These objects MUST be collapsed JSON objects stored on a single line. These lines MUST be separated by a comma `,` (ASCII 44) and a single linefeed character `\n` (ASCII 10). The `Host` object on the last line MUST NOT have a trailing comma `,` (ASCII 44), but MUST have a trailing linefeed character `\n` (ASCII 10).
+The first line of a ReconJSON file MUST be a left bracket `[` (ASCII 91) and the last line MUST be a right bracket `]` (ASCII 93). In between these brackets MUST be one or more `host` objects. These objects MUST be collapsed JSON objects stored on a single line. These lines MUST be separated by a comma `,` (ASCII 44) and a single linefeed character `\n` (ASCII 10). The `host` object on the last line MUST NOT have a trailing comma `,` (ASCII 44), but MUST have a trailing linefeed character `\n` (ASCII 10).
 
-This format is pure JSON, with the `Host` objects collapsed into a single line. The reasoning behind this decision is to provide a file that can easily be parsed by programming languages' JSON libraries while also producing a file that is grep-able and one which a simple `wc -l` command will immediately convey the correct number of hosts to the user (number of lines - 2). 
+This format is pure JSON, with the `host` objects collapsed into a single line. The reasoning behind this decision is to provide a file that can easily be parsed by programming languages' JSON libraries while also producing a file that is grep-able and one which a simple `wc -l` command will immediately convey the correct number of hosts to the user (number of lines - 2). 
 
 When placing data into arrays, the data SHOULD be sorted alphabetically (or numerically) if not otherwise specified. 
 
@@ -26,10 +26,10 @@ When placing data into arrays, the data SHOULD be sorted alphabetically (or nume
 ## Types
 
 The following types are defined within the ReconJSON standard:
-* `Host`: The object used to describe a specific profile of a computer. For more details, see [Host.md](/Host.md)
-* `DNS`: The object used to describe the DNS configuration of a specific `Host`. For more details, see [DNS.md](/DNS.md)
-* `Service`: The object used to describe a specific program running on a port. For more details, see [Service.md](/Service.md)
-* `ServiceDescriptor`: The object used to describe a specific attribute or configuration of the `Service` object. For more details, see both the `ServiceDescriptor` spec doc ([ServiceDescriptor.md](/ServiceDescriptor.md)) and the `ServiceDescriptors` folder ([ServiceDescriptors](/ServiceDescriptors))
+* `host`: The object used to describe a specific profile of a computer. For more details, see [Host.md](/Host.md)
+* `DNS`: The object used to describe the DNS configuration of a specific `host`. For more details, see [DNS.md](/DNS.md)
+* `service`: The object used to describe a specific program running on a port. For more details, see [Service.md](/Service.md)
+* `serviceDescriptor`: The object used to describe a specific attribute or configuration of the `service` object. For more details, see both the `serviceDescriptor` spec doc ([ServiceDescriptor.md](/ServiceDescriptor.md)) and the `ServiceDescriptors` folder ([ServiceDescriptors](/ServiceDescriptors))
 
 
 ## Contributing

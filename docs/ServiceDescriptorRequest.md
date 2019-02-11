@@ -1,10 +1,10 @@
-### ServiceDescriptor Request
+### serviceDescriptor Request
 
-[Please fill in here the details of what your ServiceDescriptor is describing. When writing these sections, please use the verbiage described in RFC 2119.]
+[Please fill in here the details of what your serviceDescriptor is describing. When writing these sections, please use the verbiage described in RFC 2119.]
 
 Example:
 
-The `Path` ServiceDescriptor SHALL be used to describe a single directory or file on a webserver. The `Path` object MUST be placed inside a list of element and correlated to the key `Paths` in the `serviceDescriptors` attribute of a `Service` object. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below.
+The `Path` serviceDescriptor SHALL be used to describe a single directory or file on a webserver. The `Path` object MUST be placed inside a list of element and correlated to the key `paths` in the `serviceDescriptors` attribute of a `service` object. If attribute values are not known, they MUST NOT be included unless specified otherwise in the description below.
 
 [Please fill in here the details of each attribute for this object. When writing these sections, please use the verbiage described in RFC 2119.]
 
@@ -13,7 +13,7 @@ Example:
 
 The `Path` object has the following attributes defined:
 * `type`* - MUST be the type of object. In this case, `Path`
-* `name`* - MUST be a descriptive name of what data this `ServiceDescriptor` is describing
+* `name`* - MUST be a descriptive name of what data this `serviceDescriptor` is describing
 * `path`* - MUST be the path requested where path is defined by RFC 3986 section 3.3
 * `screenshot` - MUST be the path to an image file that represents the contents of this endpoint
 * `code` - MUST be the HTTP Status code returned by either a GET request (by default) or the HTTP Verb described in the `verb` attribute
@@ -31,20 +31,20 @@ The `Path` object has the following attributes defined:
 
 Example:
 ```
-{"type":"Service","protocol":"http","banner":"Apache 1.0","serviceDescriptors":{"Paths":[{"type":"ServiceDescriptor","name":"Path","path":"/testing/test.php","screenshot":"/root/screenshots/screenshot.jpg","code":"200","content-type":"text/html","length":"1024","verb":"POST","headers":{"Server":"Apache"},"file":"test.php","fileExt":"php","hash":"8eab2974f483d66532d8e44120877c14"}]}}
+{"type":"service","protocol":"http","banner":"Apache 1.0","serviceDescriptors":{"paths":[{"type":"serviceDescriptor","name":"Path","path":"/testing/test.php","screenshot":"/root/screenshots/screenshot.jpg","code":"200","content-type":"text/html","length":"1024","verb":"POST","headers":{"Server":"Apache"},"file":"test.php","fileExt":"php","hash":"8eab2974f483d66532d8e44120877c14"}]}}
 ```
 
 
 Pretty Printed:
 ```
 {
-    "type":"Service",
+    "type":"service",
     "protocol":"http",
     "banner":"Apache 1.0",
     "serviceDescriptors":{
-        "Paths":[
+        "paths":[
             {
-                "type":"ServiceDescriptor",
+                "type":"serviceDescriptor",
                 "name":"Path",
                 "path":"/testing/test.php",
                 "screenshot":"/root/screenshots/screenshot.jpg",
